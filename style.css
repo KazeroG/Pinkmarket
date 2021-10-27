@@ -2,21 +2,22 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffF8fF;
+    background-color: #fff;
 }
 
 #pm_page_header {
-    height: 40px;
-    border-top: #e08 1px solid;
-    border-bottom: #e08 1px solid;
+    height: 50px;
+    /*border-top: #e08 1px solid;*/
+    /*border-bottom: #e08 1px solid;*/
     padding: 10px 30px;
+    vertical-align: baseline;
 }
 
 #pm_page_footer {
     margin-top: 2px;
     height: 180px;
-    border-top: #e08 1px solid;
-    border-bottom: #e08 1px solid;
+    /*border-top: #e08 1px solid;*/
+    /* border-bottom: #e08 1px solid;*/
     padding: 10px 30px;
     color: #fff;
     background-color: #e08;
@@ -47,9 +48,9 @@ body {
 
 }
 
-#pm_menu {
-    /*border:#005 1px solid;*/
-}
+/*#pm_menu {
+    border:#005 1px solid;
+}*/
 
 #pm_menu>ul {
     margin: 0;
