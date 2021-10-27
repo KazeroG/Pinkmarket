@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="https://www.w3.org/1999/xhtml" dir="ltr" lang="fr" xml:lang="fr">
-<head>
 
+<head>
 	<title> </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -39,6 +39,15 @@
 	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#FF0000">
 
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/menu-drop.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+	<script src="js/menu-drop.js"></script>
+	<script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+	<script async src="https://kit.fontawesome.com/9b4b50660a.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -50,7 +59,7 @@
 				style="background-color:#e08;color:#fff;background-image:url('images/pm.png');background-repeat:no-repeat;background-position:center"
 				class="pm_dot"></span>
 		</div>
-		<div id="pm_menu" class="pm_header_section">
+		<div id="pm_menu" class="pm_header_section nav">
 			<ul>
 				<li><a href="#">VIP</a></li>
 				<li><a href="#">50%</a></li>
@@ -68,28 +77,67 @@
 			</ul>
 		</div>
 		<div class="pm_header_section">
-			<span class="pm_dot"></span>
-			<span class="pm_dot"></span>
-			<span class="pm_dot"></span>
-			<span class="pm_dot"></span>
-			<span class="pm_dot"></span>
+
+			<div class="dropdown" style="list-style: none;">
+				<span class="pm_dot client"
+					style="background-image: url('/images/icon/Grid 3x3.svg');background-repeat:no-repeat;background-position: center; "
+					onclick="myFunction()"></span>
+				<div id="myDropdown" class="dropdown-content">
+
+					<li>
+						<a href="login">
+							<span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+									class="bi bi-door-open" viewBox="0 0 16 16">
+									<path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+									<path
+										d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z" />
+								</svg>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="login">
+							<span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+									class="bi bi-door-open" viewBox="0 0 16 16">
+									<path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+									<path
+										d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z" />
+								</svg>
+							</span>
+						</a>
+					</li>
+				</div>
+			</div>
+
+
+
+
+			<span class="pm_dot"
+				style="background-image: url('/images/icon/heart.svg');background-repeat:no-repeat;background-position: center;"></span>
+			<span class="pm_dot"
+				style="background-image: url('/images/icon/facebook.svg');background-repeat:no-repeat;background-position: center;"></span>
+			<span class="pm_dot"
+				style="background-image: url('/images/icon/instagram.svg');background-repeat:no-repeat;background-position: center;"></span>
+			<!--<span class="pm_dot" style="background-image: url('/images/icon/heart.svg');background-repeat:no-repeat;background-position: center;"></span>-->
 		</div>
 	</div>
 
 	<div id="pm_media_section">
-		<div id="pm_media_content"
-
-		style="
-
+		<div id="pm_media_content" style="
 			position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden;">
 
-			">
-			<video style="/* Make video to at least 100% wide and tall */
+			<iframe width="100%" height="100%"
+				src="https://www.youtube-nocookie.com/embed/hIOyWGpObHo?controls=0&autoplay=1&loop=1&modestbranding=1&autohide=0&enablejsapi=1&showinfo=0"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen style="/* Make video to at least 100% wide and tall */
   min-width: 100%;
   min-height: 100%;
 
@@ -101,19 +149,11 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-
-			" poster="images/vignette.png"
-				onclick="this.paused ? this.play() : this.pause();">
-				<source src="media/videoplayback.mp4" type="video/webm">
-				Votre navigateur ne permet pas de lire les vidéos HTML5.
-			</video>
+  transform: translate(-50%,-50%);" enablejsapi="1"></iframe>
 		</div>
 	</div>
-
-	<div class="pm_horiz_separator"></div>
 	<div class="pm_horiz_container pm_content_center">
-<div id="pm_menu" class="pm_header_section">
+		<div id="pm_menu_btn" class="pm_header_section">
 			<ul>
 				<li><a href="#" class="pm_button">Régions</a>
 					<div style="z-index:5"><br>
@@ -128,26 +168,23 @@
 		</div>
 	</div>
 
-	<div class="pm_horiz_container pm_content_center"
-		style="margin-top:8px;background-color:#e08;height:38px;color:#fff;font-size:28px;padding-top:6px;">
-		<span><i class="pm_arr-right"></i><i class="pm_arr-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choisissez votre
+	<div class="pm_horiz_container pm_content_center center"
+		style="background-color:#e08;height:60px;color:#fff;font-size:35px;padding:6px;">
+		<span><i class="pm_arr-right"></i><i class="pm_arr-right" style="margin-right: 25px;"></i>Choisissez votre
 			forfait</span>
 	</div>
 
-	<div class="pm_horiz_container">
-		<div class="pm_left_f pm_w15">&nbsp;</div>
-		<!--invisble 15 %-->
-
-		<div class="pm_left_f pm_w70"
-			style="background-image:url('images/bg.jpg');background-size:cover;padding-top:8px;">
+	<div class="pm_horiz_container pm_content_center">
+		<div class="pm_left_f pm_w100"
+			style="background-image:url('images/bg.jpg');background-size:cover;padding-top:20px;height: 1200px;">
 			<div class="pm_left_f pm_w33">
-				<div class="pm_forfait">
-					<div style="position:relative">
+				<div class="pm_forfait_1">
+					<div style="position:relative;height: 400px;">
 						<image src="images/solo.png" />
 					</div>
-					<div class="pm_horiz_separator"></div>
+					<div class="pm_horiz_separator" style="margin:80px;"></div>
 					<div class="pm_tarif">
-						<div class="pm_horiz_container">
+						<div class="pm_horiz_container" style="margin: 10px;">
 
 							<div class="pm_left_f pm_w45">
 								<span style="font-size:18px;font-weight:bold;display:block">6 MOIS</span>
@@ -164,7 +201,7 @@
 							<div style="clear:both"></div>
 						</div>
 					</div>
-					<div class="pm_horiz_container" style="text-align:left;font-size:15px;font-weight:bold">
+					<div class="pm_horiz_container" style="text-align:left;font-size:15px;font-weight:bold;margin-top:60px;margin-right: 10px;border-bottom-width: 10px;margin-left: 10px;">
 						<ul>
 							<li>ACCES � TOUS LES COUPONS</li>
 							<li>ABONNEMENT DE 6 � 12 MOIS</li>
@@ -173,12 +210,12 @@
 						</ul>
 					</div>
 					<div class="pm_horiz_container pm_content_center">
-						<a class="pm_pink_pointer">Choisir ce forfait</a>
+						<a class="pm_pink_pointer center-center">Choisir ce forfait</a>
 					</div>
 				</div>
 			</div>
 			<div class="pm_left_f pm_w34">
-				<div class="pm_forfait">
+				<div class="pm_forfait_2">
 					<div style="position:relative">
 						<image src="images/duo.png" />
 					</div>
@@ -201,7 +238,7 @@
 				</div>
 			</div>
 			<div class="pm_left_f pm_w33">
-				<div class="pm_forfait">
+				<div class="pm_forfait_3">
 					<div style="position:relative">
 						<image src="images/quadro.png" />
 					</div>
@@ -223,9 +260,6 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="pm_left_f pm_w15">&nbsp;</div>
-		<!--invisble 15 %-->
 	</div>
 	<div style="clear:both"></div>
 
