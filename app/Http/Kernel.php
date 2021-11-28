@@ -17,7 +17,7 @@ class Kernel extends HttpKernel
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,
         \Fruitcake\Cors\HandleCors::class,
-        \App\Http\Middleware\CheckForMaintenanceMode::class,
+        \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
@@ -39,8 +39,27 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+        'public' => [
+            'web',
+            \TypiCMS\Modules\Core\Http\Middleware\AddLocaleToRootUrl::class,
+            \TypiCMS\Modules\Core\Http\Middleware\VerifyLocalizedUrl::class,
+            \TypiCMS\Modules\Core\Http\Middleware\SetLocaleFromUrl::class,
+            \TypiCMS\Modules\Core\Http\Middleware\SetSystemLocale::class,
+            \TypiCMS\Modules\Core\Http\Middleware\PublicAccess::class,
+        ],
+
+        'admin' => [
+            'web',
+            'auth',
+            \TypiCMS\Modules\Core\Http\Middleware\SetTranslatableFallbackLocaleToNull::class,
+            \TypiCMS\Modules\Core\Http\Middleware\AdminLocale::class,
+            \TypiCMS\Modules\Core\Http\Middleware\SetSystemLocale::class,
+            \TypiCMS\Modules\Core\Http\Middleware\JavaScriptData::class,
+            \TypiCMS\Modules\Core\Http\Middleware\UserPrefs::class,
+        ],
+
         'api' => [
-            'throttle:60,1',
+            'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
@@ -55,7 +74,6 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
